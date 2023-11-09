@@ -1,0 +1,171 @@
+/* TODO: Styles base */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid rgba(204, 204, 204, 0.616) */
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* TODO: Styles base */
+
+:root {
+
+  /* * colores */
+  --Red: rgb(234, 83, 83);
+  --Cyan: rgb(69, 212, 212);
+  --Orange: rgb(252, 175, 74);
+  --Blue: rgb(84, 158, 242);
+  --Very-Dark-Blue: rgb(77, 79, 97);
+  --Grayish-Blue: rgb(163, 165, 174);
+  --Very-Light-Gray: rgb(250, 250, 250);
+
+  /* *fuentes */
+  --font-family: 'Poppins', sans-serif;
+
+}
+
+/* ! styles main */
+
+body {
+  font-size: 1.5rem;
+  color: var(--Very-Dark-Blue);
+  font-family: var(--font-family);
+  background-color: var(--Very-Light-Gray);
+  padding: 50px;
+}
+
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header__title {
+  font-size: 2.3rem;
+  font-weight: 300;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.header__title__strong {
+  font-weight: 600;
+}
+
+.header__paragraph {
+  font-size: 1.5rem;
+  color: var(--Grayish-Blue);
+  max-width: 500px;
+  margin: auto;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 25px;
+}
+
+.min__card__one {
+  box-shadow: 0 5px 10px 1px rgba(204, 204, 204, 0.836);
+  border-top: 3.5px solid var(--Cyan);
+  border-radius: 5px;
+  padding: 25px;
+}
+
+.min__card--one {
+  border-top: 3.5px solid var(--Cyan);
+}
+
+.min__card--two {
+  border-top: 3.5px solid var(--Red);
+}
+
+.min__card--three {
+  border-top: 3.5px solid var(--Orange);
+}
+
+.min__card--four {
+  border-top: 3.5px solid var(--Blue);
+}
+
+.min__card__one__title {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.min__card__one__paragraph {
+  font-size: 1.3rem;
+  color: var(--Grayish-Blue);
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.min__card__one__figure {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.min__card__one__img {
+  height: 50px;
+}
+
+/* ! styles main */
+
+
+@media screen and (min-width: 500px) {
+
+  .header__title {
+    font-size: 3.0rem;
+    max-width: 500px;
+  }
+
+  .main {
+    justify-content: center;
+  }
+
+}
+
+
+@media screen and (min-width: 900px) {
+
+  .header__title {
+    font-size: 3.6rem;
+    max-width: 500px;
+  }
+
+  .min__card__one__img {
+    height: 55px;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 150px));
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      ".     .     item2 item2 .     .    "
+      "item1 item1 item2 item2 item4 item4"
+      "item1 item1 item3 item3 item4 item4"
+      ".     .     item3 item3 .     .    ";
+  }
+
+  .min__card--one {
+    grid-area: item1;
+  }
+
+  .min__card--two {
+    grid-area: item2;
+  }
+
+  .min__card--three {
+    grid-area: item3;
+  }
+
+  .min__card--four {
+    grid-area: item4;
+  }
+}
